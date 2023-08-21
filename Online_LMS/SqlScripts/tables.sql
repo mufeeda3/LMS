@@ -52,3 +52,9 @@ CREATE TABLE Borrows
 	)
 )
 GO
+INSERT [dbo].[Books] ([Id], [Name], [Author], [Genre]) VALUES (N'493a3cc8-5668-4250-b282-54f4177f589b', N'Lockjaw: Who''s A Good Boy', N' Ryan North', N'Science')
+GO
+INSERT [dbo].[Books] ([Id], [Name], [Author], [Genre]) VALUES (N'3f754892-1861-4e5a-8606-dbfc2970b987', N'Amazing Spider-Man: Learning To Crawl', N'Dan Slott', N'Science')
+GO
+INSERT [dbo].[Users] ([Id], [Password], [Email], [Name], [Role]) VALUES (N'69eed43c-1762-4f9a-ba1d-96702e711e05', N'KEkYC3GR0GfUm64XjuHmUg==', N'admin@admin.com', N'admin', N'User')
+GO
