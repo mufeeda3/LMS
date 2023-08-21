@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card m-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="auth-form-wrapper px-4 py-5">
+                        <ngb-alert [dismissible]="false" type="danger" *ngIf="IsError">
+                            <span>{{ErrorMessage}}</span>
+                        </ngb-alert>
+                        <form (ngSubmit)="Search_Click()" [formGroup]="searchForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="searchID" placeholder="Search for book (enter one char at least)!"
+                                    formControlName="search">
+                            </div>
+                            <div style="text-align: center;">
+                                <span>
+                                    <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0"
+                                        [disabled]="searchForm.invalid">Search</button>
+                                    <button type="button" (click)="BorrowList_Click()"
+                                        class="btn btn-secondary me-2 mb-2 mb-md-0">My Books</button>
+                                </span>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card m-3" *ngFor="let item of Current">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="m-3">
+                        <h3 class="text-primary">Name: {{item.Name}}</h3>
+                        <p class="text-muted">Author: {{item.Author}}</p>
+                        <p class="text-muted">Genre: {{item.Genre}}</p>
+                        <p>
+                            <button type="button" (click)="GotoBook_Click(item)"
+                                        class="btn btn-success me-2 mb-2 mb-md-0">Details</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-loading-indicator [IsLoading]="IsLoading"></app-loading-indicator>

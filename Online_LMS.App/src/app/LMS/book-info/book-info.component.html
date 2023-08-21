@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card m-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="m-3">
+                        <h3 class="text-primary">Name: {{Current.Name}}</h3>
+                        <p class="text-muted">Author: {{Current.Author}}</p>
+                        <p class="text-muted">Genre: {{Current.Genre}}</p>
+                        <p *ngIf="CanBorrow">
+                            <button type="button" (click)="BorrowBook_Click()"
+                                        class="btn btn-success me-2 mb-2 mb-md-0">Borrow This Book</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-loading-indicator [IsLoading]="IsLoading"></app-loading-indicator>

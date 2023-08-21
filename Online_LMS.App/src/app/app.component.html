@@ -1,0 +1,21 @@
+<div class="toolbar" role="banner">
+ <a routerLink="/home"><img width="40" alt="Logo" src="/assets/images/logo.png" /></a> 
+  <span>Library Management System</span>
+  <div class="spacer"></div>
+
+  <a *ngIf="api.IsLoggedIn()" style="margin-right: 15px;cursor: pointer;" (click)="UserInfo_Click()">
+    <span>{{api.userName}}</span>
+  </a>
+  <a *ngIf="api.IsLoggedIn()" style="margin-right: 15px;cursor: pointer;" (click)="Logout_Click()">
+    <span>Logout</span>
+  </a>
+</div>
+
+<br />
+<br />
+<br />
+
+<!-- <ngb-alert>
+  <p class="text-center">It is OK</p>
+</ngb-alert> -->
+<router-outlet></router-outlet>

@@ -1,0 +1,41 @@
+<div class="row w-100 mx-0">
+    <div class="col-md-8 col-xl-6 mx-auto">
+        <div class="card">
+            <div class="row">
+                <div class="col-md-12 ps-md-0">
+                    <div class="auth-form-wrapper px-4 py-5">
+                        <a routerLink="." class="nobleui-logo logo-light  d-block mb-2">Library Management System</a>
+                        <h5 class="text-muted fw-normal mb-4">Create account.</h5>
+                        <ngb-alert [dismissible]="false" type="danger" *ngIf="IsError">
+                            <span>{{ErrorMessage}}</span>
+                        </ngb-alert>
+                        <form  (ngSubmit)="Register_Click()" [formGroup]="loginForm">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="User Name"
+                                formControlName="userName">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"
+                                formControlName="userEmail">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                    autocomplete="current-password" formControlName="userPassword" placeholder="Password">
+                            </div>
+                            <div>
+                                <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary me-2 mb-2 mb-md-0">Register</button>
+                                    <a routerLink="/auth" class="d-block mt-3 text-muted">Login Page</a>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-loading-indicator [IsLoading]="isLoading"></app-loading-indicator>
