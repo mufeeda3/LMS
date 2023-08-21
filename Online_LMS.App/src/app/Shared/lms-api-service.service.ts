@@ -59,6 +59,21 @@ export class LmsApiServiceService {
     localStorage.setItem('Authentication.UserEmail', email);
   }
 
+  public get userId(): string {
+    var id = localStorage.getItem('Authentication.userId');
+    if (id && id.length > 0) {
+      return id;
+    }
+    return '';
+  }
+
+  public set userId(id: string) {
+    if (!id) {
+      id = '';
+    }
+    localStorage.setItem('Authentication.userId', id);
+  }
+
   public get userRole(): string {
     var role_name = localStorage.getItem('Authentication.UserRole');
     if (role_name && role_name.length > 0) {

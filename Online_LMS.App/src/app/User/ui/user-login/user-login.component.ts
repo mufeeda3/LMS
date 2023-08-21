@@ -42,6 +42,7 @@ export class UserLoginComponent {
           this.api.userName = a.UserName;
           this.api.userEmail = a.Email;
           this.api.userRole = a.UserRole;
+          this.api.userId = a.UserId;
           this.router.navigate(['/home']);
         }
       }, error => {

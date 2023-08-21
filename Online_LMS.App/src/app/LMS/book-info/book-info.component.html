@@ -9,13 +9,47 @@
                         <p class="text-muted">Genre: {{Current.Genre}}</p>
                         <p *ngIf="CanBorrow">
                             <button type="button" (click)="BorrowBook_Click()"
-                                        class="btn btn-success me-2 mb-2 mb-md-0">Borrow This Book</button>
+                                class="btn btn-success me-2 mb-2 mb-md-0">Borrow This Book</button>
                         </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card m-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="m-3">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Borrowed on Date</th>
+                                    <th scope="col">Returned</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of Borrows; index as i">
+                                    <th scope="row">{{ i + 1 }}</th>
+                                    <td>
+                                        {{ item.StartDate }}
+                                    </td>
+                                    <td>{{ item.EndData }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <app-loading-indicator [IsLoading]="IsLoading"></app-loading-indicator>

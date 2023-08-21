@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Online_LMS.Entities.DataModels;
+using Online_LMS.Services.AuthHandler;
 using Online_LMS.Services.UserBooks;
 using System.Text;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Online_LMS.Controllers {
+    [Authorize(AuthenticationSchemes = SchemesNamesConst.TokenAuthenticationDefaultScheme)]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class LmsController : ControllerBase {

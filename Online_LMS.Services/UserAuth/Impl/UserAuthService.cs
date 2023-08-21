@@ -51,6 +51,7 @@ namespace Online_LMS.Services.UserAuth.Impl {
                     UserToken = newSession.Id.ToString(),
                     UserName = user.Name,
                     UserRole = user.Role,
+                    UserId = user.Id,
                     Email = user.Email,
                     Success = true
                 };
